@@ -20,3 +20,10 @@
 3. rodei:
 ```pip install -r requirements.txt``` 
 - este último comando vai instalar as dependências do projeto a partir do requirements.txt
+
+### rodando a API
+```cd src```
+```uvicorn app:app --reload```
+
+### documentação da API
+Acessar http://127.0.0.1:8000/docs
