@@ -6,17 +6,26 @@ import pickle
 import numpy as np
 from tensorflow.keras.models import load_model
 import joblib
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="API de Predição de Churn em E-Commerce", version="1.0.0")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # quem pode acessar a API
+    allow_credentials=True,
+    allow_methods=["POST"],   
+    allow_headers=["*"],   
+)
+
 try:
-    scaler = joblib.load("robust_scaler_final.pkl")
+    scaler = joblib.load("models/robust_scaler_final.pkl")
 except FileNotFoundError:
     scaler = None
     print("Arquivo do escalonador não encontrado. A aplicação continuará sem ele.")
 
 try:
-    model = load_model('model_final_nn.h5')
+    model = load_model('models/model_final_nn.h5')
 except (FileNotFoundError, IOError):
     model = None
     print("Arquivo do modelo não encontrado. A aplicação continuará sem ele.")
