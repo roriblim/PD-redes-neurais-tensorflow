@@ -7,3 +7,7 @@ seaborn
 openpyxl
 fastapi[standard]
 uvicorn
+streamlit
+requests
+pydantic
+

@@ -27,3 +27,9 @@
 
 ### documentação da API
 Acessar http://127.0.0.1:8000/docs
+
+
+### consumindo a API via Streamlit
+```
+streamlit run streamlit-churn-app/src/streamlit_app.py
+```
