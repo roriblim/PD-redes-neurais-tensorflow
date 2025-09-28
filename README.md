@@ -23,7 +23,7 @@
 
 ### rodando a API
 ```cd src```
-```uvicorn app:app --reload```
+```uvicorn main:app --reload```
 
 ### documentação da API
 Acessar http://127.0.0.1:8000/docs
