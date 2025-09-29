@@ -4,17 +4,19 @@ services:
   fastapi-dev:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.fastapi
     ports:
       - "8000:8000"
     environment:
       - ENV=dev
 
-  fastapi-prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8000"
-    environment:
-      - ENV=prod
+
+
+  streamlit:
+      build:
+        context: .
+        dockerfile: Dockerfile.streamlit
+      ports:
+        - "8501:8501"
+      depends_on:
+        - fastapi-dev

@@ -21,15 +21,26 @@
 ```pip install -r requirements.txt``` 
 - este último comando vai instalar as dependências do projeto a partir do requirements.txt
 
-### rodando a API
-```cd src```
+--------------------
+## SUBINDO EM CONTAINER
+### rodando em container
+```docker compose up```
+
+
+--------------------
+## SUBINDO DE FORMA LOCAL
+### rodando a API de forma local
+Ajuste o endereco dos modelos (no load, tire o fastapi/)
+```cd fastapi```
 ```uvicorn main:app --reload```
 
+
+### consumindo a API via Streamlit de forma local
+ajuste a url para onde aponta a aplicação streamlit para http://127.0.0.1:8000
+```
+streamlit run streamlit/streamlit_app.py
+```
+
+---------------------
 ### documentação da API
 Acessar http://127.0.0.1:8000/docs
-
-
-### consumindo a API via Streamlit
-```
-streamlit run streamlit-churn-app/src/streamlit_app.py
-```
