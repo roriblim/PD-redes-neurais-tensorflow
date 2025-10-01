@@ -30,7 +30,7 @@
 --------------------
 ## SUBINDO DE FORMA LOCAL
 ### rodando a API de forma local
-Ajuste o endereco dos modelos (no load, tire o fastapi/)
+
 ```cd fastapi```
 ```uvicorn main:app --reload```
 
@@ -44,3 +44,6 @@ streamlit run streamlit/streamlit_app.py
 ---------------------
 ### documentação da API
 Acessar http://127.0.0.1:8000/docs
+
+### Streamlit
+Acessar http://localhost:8501/
